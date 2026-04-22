@@ -1,0 +1,55 @@
+.wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+}
+
+.bubble {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+  background: var(--tooltip-bg);
+  color: var(--tooltip-text);
+  border: 1px solid var(--tooltip-border);
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 18px;
+  white-space: normal;
+  max-width: min(360px, 90vw);
+  box-shadow: var(--tooltip-shadow);
+  transition: opacity 240ms cubic-bezier(0.2, 0.9, 0.2, 1), transform 240ms cubic-bezier(0.2, 0.9, 0.2, 1);
+  z-index: 1200;
+  text-align: left;
+  letter-spacing: 0.01em;
+  transform: translateY(6px);
+}
+
+.bubble::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+}
+
+.bubble[data-placement='top']::after {
+  top: 100%;
+  border-color: var(--tooltip-bg) transparent transparent transparent;
+}
+
+.bubble[data-placement='bottom']::after {
+  bottom: 100%;
+  border-color: transparent transparent var(--tooltip-bg) transparent;
+}
+
+.open {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,0 +1,209 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 18px 22px;
+  border-radius: 18px;
+  gap: 16px;
+  min-height: 295px;
+  border: 1px solid rgba(104, 122, 168, 0.18);
+  transition: background-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.preCard {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  box-shadow: 0 18px 38px rgba(25, 40, 57, 0.08);
+}
+
+.darkPreCard {
+  background: linear-gradient(180deg, rgba(23,26,40,0.9), rgba(16,20,36,0.9));
+  box-shadow: 0 22px 40px rgba(2, 6, 23, 0.44);
+}
+
+.expandCaret {
+  color: var(--text-soft);
+  font-size: 0.85rem;
+}
+
+.collapsibleClosed {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 300ms ease, opacity 300ms ease, padding 300ms ease;
+}
+
+.collapsibleOpen {
+  max-height: 420px;
+  opacity: 1;
+  transition: max-height 360ms cubic-bezier(.2,.9,.2,1), opacity 360ms cubic-bezier(.2,.9,.2,1);
+}
+
+.expandedCard {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 60px rgba(2,6,23,0.5);
+}
+
+.postCard {
+  background: linear-gradient(135deg, #3c9aff 2.5%, #0066fe 100.05%);
+  box-shadow: 0 22px 44px rgba(30, 41, 59, 0.22);
+}
+
+.darkPostCard {
+  background: linear-gradient(135deg, rgba(89,168,255,0.14), rgba(45,109,246,0.12) 50%, rgba(30,86,255,0.12));
+}
+
+.headingRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.heading {
+  margin: 0;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.infoIcon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #cbd5e1;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #475569;
+  cursor: help;
+}
+
+.darkInfoIcon {
+  border-color: #334155;
+  color: #cbd5e1;
+}
+
+.postHeading {
+  color: #ffffff;
+}
+
+.darkHeading {
+  color: #e2e8f0;
+}
+
+.tableLike {
+  display: grid;
+  gap: 14px;
+}
+
+.headerRow,
+.dataRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  align-items: center;
+}
+
+.headerText,
+.label {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #334155;
+}
+
+.postText {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.darkText {
+  color: #cbd5e1;
+}
+
+.value {
+  text-align: right;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #334155;
+}
+
+.darkValue {
+  color: #f8fafc;
+}
+
+.postValue {
+  color: #ffffff;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid rgba(203, 213, 225, 0.22);
+  margin: 0;
+}
+
+.darkDivider {
+  border-top-color: #334155;
+}
+
+.postDivider {
+  border-top-color: rgba(255, 255, 255, 0.4);
+}
+
+.realized {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.realizedLabel {
+  margin: 0;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.realizedValue {
+  margin: 0;
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.darkRealized {
+  color: #f8fafc;
+}
+
+.postRealizedLabel,
+.postRealizedValue {
+  color: #ffffff;
+}
+
+.savings {
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 600;
+  color: #effff2;
+}
+
+@media (max-width: 900px) {
+  .card {
+    min-height: auto;
+  }
+
+  .headerRow,
+  .dataRow {
+    grid-template-columns: 1.1fr 1fr 1fr;
+    gap: 8px;
+  }
+
+  .realizedValue {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
