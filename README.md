@@ -39,25 +39,6 @@ npm run lint
 
 ---
 
-## Screenshots
-
-Place screenshots under `public/screenshots/` (create the directory if needed). Recommended filenames:
-
-- `holdings-list.png` — main holdings table (desktop)
-- `expanded-row.png` — expanded row details
-- `dark-mode.png` — dark theme view
-- `search-sort.png` — search + sort in action
-
-Example markdown to embed a screenshot in this README:
-
-```md
-![Holdings list](public/screenshots/holdings-list.png)
-```
-
-If you don't have screenshots yet, you can generate them with your OS screenshot tool and place them in `public/screenshots/`.
-
----
-
 ## Assumptions & Notes
 
 - The app uses mock/priced sample data returned by local hooks (`useHoldings`, `useCapitalGains`). There is no backend integration included.
