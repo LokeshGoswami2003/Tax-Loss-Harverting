@@ -1,16 +1,77 @@
-# React + Vite
+# Tax Loss Harvesting (Dashboard)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A compact React + TypeScript dashboard that demonstrates tax-loss-harvesting UX: search, sorting, expandable rows, dark mode, and harvesting suggestions. This repository is a Vite + React app intended as a frontend demo/prototype.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Setup (Quick Start)
 
-## React Compiler
+Prerequisites:
+- Node.js 18.x (LTS) or newer
+- npm 9.x (bundled with Node) or yarn
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Install dependencies
 
-## Expanding the ESLint configuration
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. Start development server
+
+```bash
+npm run dev
+```
+
+Open http://localhost:5173 in your browser (Vite default).
+
+3. Build for production
+
+```bash
+npm run build
+npm run preview
+```
+
+4. Lint (optional)
+
+```bash
+npm run lint
+```
+
+---
+
+## Screenshots
+
+Place screenshots under `public/screenshots/` (create the directory if needed). Recommended filenames:
+
+- `holdings-list.png` — main holdings table (desktop)
+- `expanded-row.png` — expanded row details
+- `dark-mode.png` — dark theme view
+- `search-sort.png` — search + sort in action
+
+Example markdown to embed a screenshot in this README:
+
+```md
+![Holdings list](public/screenshots/holdings-list.png)
+```
+
+If you don't have screenshots yet, you can generate them with your OS screenshot tool and place them in `public/screenshots/`.
+
+---
+
+## Assumptions & Notes
+
+- The app uses mock/priced sample data returned by local hooks (`useHoldings`, `useCapitalGains`). There is no backend integration included.
+- Tested on Windows (development environment in this workspace). Cross-platform (macOS/Linux) should work with Node 18+.
+- Browser support: modern evergreen browsers (Chrome, Edge, Firefox, Safari).
+- The UI changes in this branch include: improved dark-mode contrast, smooth transitions (200–300ms), client-side sorting (Current Price, STCG, LTCG), debounced search (300ms), loading indicators for "See More", harvest highlighting (badge + border), and an expandable Pre-Harvest card.
+
+---
+
+## Troubleshooting
+
+- If the dev server doesn't start, check your Node version: run `node -v` and ensure it's >=18. If ports are busy, Vite will prompt to use a different port.
+- If styles look broken, ensure the CSS modules are loading and that you're running the dev server (Vite handles HMR).
+
+---
+
+If you'd like, I can add example screenshots to the repo (you can provide images) or wire up a small seed script to regenerate mock holdings.
